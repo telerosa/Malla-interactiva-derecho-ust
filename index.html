@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Malla Interactiva</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 40px);
+      gap: 4px;
+      margin: 20px;
+    }
+    .cell {
+      width: 40px;
+      height: 40px;
+      background: lightgray;
+      border: 1px solid #999;
+      cursor: pointer;
+    }
+    .active {
+      background: steelblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva</h1>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const grid = document.getElementById("grid");
+    for (let i = 0; i < 100; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.addEventListener("click", () => {
+        cell.classList.toggle("active");
+      });
+      grid.appendChild(cell);
+    }
+  </script>
+</body>
+</html>
